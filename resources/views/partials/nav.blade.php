@@ -44,8 +44,8 @@
                     </li>
 
                     <li class="sidebar-item {{ (request()->segment(2) == 'courses') ? 'active' : '' }}">
-                        <a class="sidebar-link" href="">
-                            <i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Courses</span>
+                        <a class="sidebar-link" href="{{ route('job-type.index') }}">
+                            <i class="align-middle" data-feather="book-open"></i> <span class="align-middle">Job Type</span>
                         </a>
                     </li>
 

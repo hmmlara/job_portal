@@ -37,8 +37,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
             return view('admin.index');
         })->name('admin.index');
 
-//        // courses
-//        Route::resource('/courses', CourseController::class);
+
+        // courses
+        Route::resource('/job-type', \App\Http\Controllers\JobTypeController::class);
 //
 //        // schedules
 //        Route::resource('/schedules', ScheduleController::class);
