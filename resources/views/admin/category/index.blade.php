@@ -26,6 +26,7 @@
                             </tr>
                             </thead>
                             <tbody>
+                            {{-- {{ $categories->links() }} --}}
                             @foreach ($categories as $key => $category)
                                 <form action="{{route('category.destroy', $category->id)}}" method="post">
                                     @csrf
@@ -50,7 +51,7 @@
 
             </div>
       
-          {{-- <div class="d-flex justify-content-around">
+          <div class="d-flex justify-content-around">
                 <div>
                     Showing {{ $categories->firstItem() }} to {{ $categories->lastItem() }}
                     of total {{ $categories->total() }}
@@ -58,7 +59,7 @@
                 <div class="pagination">
                     {{$categories->links('pagination::bootstrap-4')}}
                 </div>
-            </div> --}}
+            </div>
 
 
         </div>

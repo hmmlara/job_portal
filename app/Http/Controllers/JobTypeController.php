@@ -12,14 +12,14 @@ class JobTypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-    $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    // $this->middleware('auth');
+    // }
 
     public function index()
     {
-        $jobtype = JobType::paginate(3);
+        $jobtype = JobType::latest()->paginate(5);
         return view('admin.jobtype.index', ['jobtypes'=>$jobtype]);
     }
 

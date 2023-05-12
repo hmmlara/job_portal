@@ -14,14 +14,14 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-    $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    // $this->middleware('auth');
+    // }
 
     public function index()
     {
-        $categories = Category::paginate(5);
+        $categories = Category::latest()->paginate(5);
         return view('admin.category.index',['categories'=>$categories]);
     }
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +36,20 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         // category
         Route::resource('/category', CategoryController::class);
 
+        Auth::routes();
+
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
     });
+
+    // Auth::routes();
+
+    // Route::get('/login', 'HomeController@index')->name('login');
 });
+
+
+
+
 
 

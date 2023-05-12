@@ -4,7 +4,6 @@
 
     <main class="content">
         <div class="container-fluid p-0">
-
             <h1 class="h3 mb-3"><strong>Job</strong> Type</h1>
 
             <div class="row">
@@ -50,15 +49,15 @@
 
             </div>
 
-{{--            <div class="d-flex justify-content-around">--}}
-{{--                <div>--}}
-{{--                    Showing {{ $jobtypes->firstItem() }} to {{ $jobtypes->lastItem() }}--}}
-{{--                    of total {{ $jobtypes->total() }}--}}
-{{--                </div>--}}
-{{--                <div class="pagination">--}}
-{{--                    {{$jobtypes->links('pagination::bootstrap-4')}}--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            <div class="d-flex justify-content-around">
+                <div>
+                    Showing {{ $jobtypes->firstItem() }} to {{ $jobtypes->lastItem() }}
+                    of total {{ $jobtypes->total() }}
+                </div>
+                <div class="pagination">
+                    {{$jobtypes->links('pagination::bootstrap-4')}}
+                </div>
+            </div>
 
         </div>
     </main>
