@@ -11,6 +11,6 @@ class JobType extends Model
     protected  $fillable=['job_type'];
 
     public function jobpost(){
-        return $this->belongsTo(JobPost::class);
+        return $this->belongsTo(JobPost::class);    
     }
 }

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Location extends Model
 {
     use HasFactory;
+
+    protected $fillable=['city','country'];
+
+    public function jobpost(){
+        return $this->belongsTo(JobPost::class);
+    }
+    
 }

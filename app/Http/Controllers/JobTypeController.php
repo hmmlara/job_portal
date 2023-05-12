@@ -12,6 +12,11 @@ class JobTypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+    $this->middleware('auth');
+    }
+
     public function index()
     {
         $jobtype = JobType::paginate(3);
@@ -25,7 +30,6 @@ class JobTypeController extends Controller
      */
     public function create()
     {
-        //
 //        $jobtypes=JobType::all();
         return view('admin.jobtype.create');
     }
@@ -38,7 +42,6 @@ class JobTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
             'job_type'=>'required',
         ]);
@@ -67,7 +70,6 @@ class JobTypeController extends Controller
      */
     public function edit($id)
     {
-        //
         $jobtype=JobType::find($id);
         return view('admin.jobtype.edit',['jobtype'=>$jobtype]);
     }
@@ -81,7 +83,6 @@ class JobTypeController extends Controller
      */
     public function update(Request $request, JobType $jobType)
     {
-        //
         $request->validate([
             'job_type'=>'required',
         ]);
@@ -98,7 +99,6 @@ class JobTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
         $jobtype = JobType::find($id);
         $jobtype->delete();
         return redirect()->route('job-type.index');

@@ -5,11 +5,11 @@
     <main class="content">
         <div class="container-fluid p-0">
 
-            <h1 class="h3 mb-3"><strong>Job</strong> Type</h1>
+            <h1 class="h3 mb-3"><strong>Category</strong></h1>
 
             <div class="row">
                 <div class="col-md-3 mb-3">
-                    <a href="{{route('job-type.create')}}" class="btn btn-success">Add New Job Type</a>
+                    <a href="{{route('category.create')}}" class="btn btn-success">Add New Category</a>
                 </div>
             </div>
 
@@ -21,21 +21,21 @@
                             <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Job Type</th>
+                                <th>Name</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($jobtypes as $key => $jobtype)
-                                <form action="{{route('job-type.destroy', $jobtype->id)}}" method="post">
+                            @foreach ($categories as $key => $category)
+                                <form action="{{route('category.destroy', $category->id)}}" method="post">
                                     @csrf
                                     @method('delete')
                                     <tr>
-                                        <td>{{$jobtypes->firstItem() + $key}}</td>
-                                        <td>{{$jobtype->job_type}}</td>
+                                        <td>{{$categories->firstItem() + $key}}</td>
+                                        <td>{{$category->name}}</td>
                                         <td class="d-none d-md-table-cell">
-                                            {{-- <a href="{{route('job-type.show', $jobtype->id)}}" class="btn btn-success">View</a> --}}
-                                            <a href="{{route('job-type.edit', $jobtype->id)}}" class="btn btn-warning">Edit</a>
+                                            {{-- <a href="{{route('job-type.show', $category->id)}}" class="btn btn-success">View</a> --}}
+                                            <a href="{{route('category.edit', $category->id)}}" class="btn btn-warning">Edit</a>
                                             <button class="btn btn-danger">Delete</button>
                                         </td>
 
@@ -49,16 +49,17 @@
                 </div>
 
             </div>
+      
+          {{-- <div class="d-flex justify-content-around">
+                <div>
+                    Showing {{ $categories->firstItem() }} to {{ $categories->lastItem() }}
+                    of total {{ $categories->total() }}
+                </div>
+                <div class="pagination">
+                    {{$categories->links('pagination::bootstrap-4')}}
+                </div>
+            </div> --}}
 
-{{--            <div class="d-flex justify-content-around">--}}
-{{--                <div>--}}
-{{--                    Showing {{ $jobtypes->firstItem() }} to {{ $jobtypes->lastItem() }}--}}
-{{--                    of total {{ $jobtypes->total() }}--}}
-{{--                </div>--}}
-{{--                <div class="pagination">--}}
-{{--                    {{$jobtypes->links('pagination::bootstrap-4')}}--}}
-{{--                </div>--}}
-{{--            </div>--}}
 
         </div>
     </main>

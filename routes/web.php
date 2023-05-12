@@ -22,15 +22,6 @@ Route::get('/', function () {
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
-//    Route::resource('/',HomeController::class);
-//
-//    Route::get('/courseinfo', 'CourseInfoController@show')->name('courseinfo');
-//
-//    Route::get('/courses', 'FECourseController@index')->name('courses');
-//
-//    Route::get('/courseDetails/{id}', 'FECourseController@courseShow')->name('courseDetails');
-
-
     // admin
     Route::group(['prefix' => 'admin'], function () {
         Route::get('/',function(){
@@ -38,24 +29,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         })->name('admin.index');
 
 
-        // courses
-        Route::resource('/job-type', \App\Http\Controllers\JobTypeController::class);
-//
-//        // schedules
-//        Route::resource('/schedules', ScheduleController::class);
-//
-//        // batches
-//        Route::resource('/batch', BatchController::class);
-//
-//        // specialities
-//        Route::resource('/specialities',SpecialityController::class);
-//
-//        // trainers
-//        Route::resource('/trainers',TrainerController::class);
-//
-//        Route::resource('topics',TopicController::class);
-//
-//        Route::resource('topicLesson',Topic_lesson_Controller::class);
+        // jobtype
+        Route::resource('/job-type', JobTypeController::class);
+
+        // category
+        Route::resource('/category', CategoryController::class);
+
 
     });
 });
+
+
